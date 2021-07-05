@@ -13,8 +13,7 @@ test('add characters', () => {
 test('Add same char', () => {
   team.members.clear();
   team.add('Bowman');
-  team.add('Bowman');
-  expect(team.members.size).toBe(1);
+  expect(() => team.add('Bowman')).toThrow();
 });
 
 test('Add many chars with one same', () => {

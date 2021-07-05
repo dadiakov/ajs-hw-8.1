@@ -7,15 +7,10 @@ export default class Team {
   }
 
   add(char) {
-    try {
-      this.members.forEach((e) => {
-        if (e.char === char) throw new Error(`Персонаж ${char} уже есть в команде`);
-      });
-      this.members.add(new Character(char));
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.log(e);
-    }
+    this.members.forEach((e) => {
+      if (e.char === char) throw new Error(`Персонаж ${char} уже есть в команде`);
+    });
+    this.members.add(new Character(char));
   }
 
   addAll(...char) {
